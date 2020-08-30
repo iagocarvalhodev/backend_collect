@@ -1,9 +1,14 @@
+import cors from "cors";
 import express from "express";
 import path from "path";
 import routes from "./routes";
 
 const app = express();
-
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.json());
 app.use(routes);
 
